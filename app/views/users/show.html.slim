@@ -1,0 +1,13 @@
+h3
+  article.blog-post
+    h2.blog-post-title
+      => @user.first_name
+      = @user.last_name
+    h2.blog-post-title
+      = @user.email
+
+    h3 Last 10 post
+    - @posts.each do |post|
+      h3
+        article.blog-post
+          = render 'posts/shared/short_post', post: post

@@ -1,0 +1,6 @@
+FROM ruby:alpine
+RUN apk add --update build-base postgresql-dev tzdata nodejs yarn
+RUN gem install rails -v '6.1.4'
+WORKDIR /app
+ADD Gemfile Gemfile.lock /app/
+RUN bundle install

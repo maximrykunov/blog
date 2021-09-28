@@ -1,0 +1,8 @@
+h1
+  | Welcome#index
+h1
+  | Last 10 posts
+- @posts.each do |post|
+  h3
+    article.blog-post
+      = render 'posts/shared/short_post', post: post
